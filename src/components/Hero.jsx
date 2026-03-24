@@ -126,10 +126,10 @@ export default function Hero() {
               marginBottom: '2rem',
             }}
           >
-            I'm a Computer Science graduate driven by solving complex problems and building systems that create real-world impact.
+            I'm a Computer Science graduate driven by solving complex problems and building systems that create real world impact.
             I focus on designing scalable and intelligent solutions, with strong experience in machine learning and NLP.
-            My work has explored challenges such as bias in language models and cross-lingual generalization through projects like news debiasing and hate speech detection.
-            Beyond modeling, I enjoy building complete end-to-end systems — from LLM-based applications to real-time platforms — with an emphasis on scalability and reliability.
+            My work has explored challenges such as bias in language models and cross lingual generalization through projects like news debiasing and hate speech detection.
+            Beyond modeling, I enjoy building complete end-to-end systems from LLM based applications to real-time platforms with an emphasis on scalability and reliability.
           </motion.p>
 
           <motion.div
