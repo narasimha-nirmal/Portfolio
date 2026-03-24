@@ -19,13 +19,13 @@ const socialLinks = [
 
 const featuredProjects = [
   {
-    title: 'Cross Lingual Hate Speech Detection',
-    desc: 'Detecting Hate Speech using XLM-R with zero-shot and multi-task learning obtaining Macro F1: 0.79',
+    title: 'Cross-Lingual Hate Speech Detection',
+    desc: 'XLM-R with zero-shot & multi-task learning · Macro F1: 0.79',
     href: '#projects',
   },
   {
-    title: 'News Debiasing',
-    desc: 'News debiasing system using LLMs like MPT and LED, explored RAG-based grounding, achieving ROUGE-1: 40.5 and BERTScore: 82.6',
+    title: 'Neutral News Generation',
+    desc: 'RAG-based debiasing with MPT & LED · ROUGE-1: 40.5',
     href: '#projects',
   },
 ]
@@ -49,35 +49,33 @@ export default function Hero() {
         backgroundColor: '#F8FAFC',
       }}
     >
-      {/* Soft dot grid */}
+      {/* Dot grid */}
       <div style={{
         position: 'absolute', inset: 0, pointerEvents: 'none',
         backgroundImage: 'radial-gradient(circle, rgba(109,40,217,0.07) 1px, transparent 1px)',
         backgroundSize: '28px 28px',
       }} />
-      {/* Violet radial glow top-right */}
+      {/* Glow */}
       <div style={{
         position: 'absolute', top: '-100px', right: '-80px', width: '520px', height: '520px',
         borderRadius: '50%', pointerEvents: 'none',
         background: 'radial-gradient(circle, rgba(124,58,237,0.12) 0%, transparent 70%)',
       }} />
 
-      {/* Two-column layout */}
-      <div style={{
+      <div className="hero-grid" style={{
         maxWidth: '1060px', width: '100%', position: 'relative', zIndex: 1,
         display: 'grid',
         gridTemplateColumns: '1fr auto',
         alignItems: 'center',
         gap: '4rem',
-      }} className="hero-grid">
+      }}>
 
-        {/* ── LEFT: text content ── */}
+        {/* LEFT: text */}
         <div>
-          {/* Name */}
           <motion.h1
             custom={0} initial="hidden" animate="visible" variants={fadeUp}
             style={{
-              fontSize: 'clamp(2.6rem, 6vw, 4.2rem)',
+              fontSize: 'clamp(2.4rem, 6vw, 4.2rem)',
               fontWeight: 700,
               letterSpacing: '-0.03em',
               margin: '0 0 0.75rem',
@@ -96,18 +94,18 @@ export default function Hero() {
             <span style={{ color: '#7C3AED', WebkitTextFillColor: '#7C3AED' }}>.</span>
           </motion.h1>
 
-          {/* Tagline */}
-          <motion.p
+          <motion.div
             custom={1} initial="hidden" animate="visible" variants={fadeUp}
+            className="hero-tagline"
             style={{
-              fontSize: 'clamp(1rem, 2vw, 1.1rem)',
+              fontSize: 'clamp(0.9rem, 2vw, 1.05rem)',
               fontWeight: 600,
               color: '#475569',
               marginBottom: '1.25rem',
               fontFamily: "'Space Grotesk', sans-serif",
               display: 'flex',
               flexWrap: 'wrap',
-              gap: '0.5rem',
+              gap: '0.4rem',
               alignItems: 'center',
             }}
           >
@@ -116,29 +114,27 @@ export default function Hero() {
             <span>Full-Stack Systems</span>
             <span style={{ color: '#CBD5E1' }}>·</span>
             <span>CS Graduate @ USC</span>
-          </motion.p>
+          </motion.div>
 
-          {/* Bio */}
           <motion.p
             custom={2} initial="hidden" animate="visible" variants={fadeUp}
             style={{
-              fontSize: '1.025rem',
+              fontSize: '0.975rem',
               color: '#475569',
               lineHeight: 1.75,
               maxWidth: '520px',
               marginBottom: '2rem',
             }}
           >
-            I’m a Computer Science graduate driven by solving complex problems and building systems that create real-world impact.
+            I'm a Computer Science graduate driven by solving complex problems and building systems that create real-world impact.
             I focus on designing scalable and intelligent solutions, with strong experience in machine learning and NLP.
             My work has explored challenges such as bias in language models and cross-lingual generalization through projects like news debiasing and hate speech detection.
-            Beyond modeling, I enjoy building complete, end-to-end systems from LLM based applications to real-time platforms with an emphasis on scalability and reliability.
-            I see myself as a problem solver first, approaching challenges with both analytical depth and a systems oriented mindset.
+            Beyond modeling, I enjoy building complete end-to-end systems — from LLM-based applications to real-time platforms — with an emphasis on scalability and reliability.
           </motion.p>
 
-          {/* Social icons */}
           <motion.div
             custom={3} initial="hidden" animate="visible" variants={fadeUp}
+            className="hero-socials"
             style={{ display: 'flex', gap: '0.75rem', marginBottom: '2.5rem', flexWrap: 'wrap' }}
           >
             {socialLinks.map(({ icon: Icon, href, label }) => (
@@ -180,7 +176,6 @@ export default function Hero() {
             ))}
           </motion.div>
 
-          {/* Featured project mini-cards */}
           <motion.div custom={4} initial="hidden" animate="visible" variants={fadeUp}>
             <p style={{
               fontSize: '0.72rem', textTransform: 'uppercase', letterSpacing: '0.12em',
@@ -188,23 +183,24 @@ export default function Hero() {
             }}>
               Featured Projects
             </p>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem' }}>
+            <div className="hero-project-cards" style={{ display: 'flex', gap: '0.75rem' }}>
               {featuredProjects.map((p) => (
                 <a
                   key={p.title}
                   href={p.href}
                   onClick={scrollToProjects}
+                  className="hero-project-card"
                   style={{
+                    flex: 1,
                     display: 'block',
-                    padding: '0.875rem 1.1rem',
+                    padding: '0.875rem 1rem',
                     borderRadius: '10px',
                     backgroundColor: '#fff',
                     border: '1px solid #E2E8F0',
                     textDecoration: 'none',
                     transition: 'all 0.2s',
-                    minWidth: '180px',
-                    maxWidth: '240px',
                     boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+                    minWidth: 0,
                   }}
                   onMouseEnter={e => {
                     e.currentTarget.style.transform = 'translateY(-3px)'
@@ -217,10 +213,10 @@ export default function Hero() {
                     e.currentTarget.style.boxShadow = '0 1px 3px rgba(0,0,0,0.05)'
                   }}
                 >
-                  <p style={{ margin: '0 0 0.25rem', fontWeight: 600, color: '#0F172A', fontSize: '0.88rem' }}>
+                  <p style={{ margin: '0 0 0.25rem', fontWeight: 600, color: '#0F172A', fontSize: '0.85rem', lineHeight: 1.3 }}>
                     {p.title}
                   </p>
-                  <p style={{ margin: 0, fontSize: '0.78rem', color: '#64748B', lineHeight: 1.5 }}>
+                  <p style={{ margin: 0, fontSize: '0.76rem', color: '#64748B', lineHeight: 1.5 }}>
                     {p.desc}
                   </p>
                 </a>
@@ -229,31 +225,30 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* ── RIGHT: photo ── */}
+        {/* RIGHT: photo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.92 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
-          style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexShrink: 0 }}
           className="hero-photo"
+          style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexShrink: 0 }}
         >
-          <div style={{ position: 'relative' }}>
-            {/* Decorative ring */}
+          <div style={{ position: 'relative', width: '240px', height: '240px' }}>
             <div style={{
               position: 'absolute', inset: '-10px', borderRadius: '50%',
               border: '2px dashed rgba(124,58,237,0.25)',
             }} />
-            {/* Accent dot */}
             <div style={{
               position: 'absolute', bottom: '10px', right: '-4px',
               width: '22px', height: '22px', borderRadius: '50%',
               backgroundColor: '#7C3AED',
               border: '3px solid #F8FAFC',
+              zIndex: 2,
             }} />
-
             <img
               src={`${import.meta.env.BASE_URL}profile.jpg`}
               alt="Nirmal Narasimha"
+              className="hero-photo-img"
               style={{
                 width: '240px',
                 height: '240px',
@@ -273,22 +268,34 @@ export default function Hero() {
         @media (max-width: 720px) {
           .hero-grid {
             grid-template-columns: 1fr !important;
-            text-align: center;
-            gap: 2.5rem !important;
+            text-align: center !important;
+            gap: 2rem !important;
           }
-          .hero-grid > div:first-child p,
-          .hero-grid > div:first-child h1 {
-            text-align: center;
+          .hero-photo {
+            order: -1;
+            justify-content: center !important;
           }
-          .hero-grid > div:first-child > div,
-          .hero-grid > div:first-child > p {
-            justify-content: center;
+          .hero-photo > div {
+            width: 160px !important;
+            height: 160px !important;
           }
-          .hero-photo { order: -1; }
-          .hero-photo > div > div:last-child {
-            width: 180px !important; height: 180px !important;
+          .hero-photo-img {
+            width: 160px !important;
+            height: 160px !important;
           }
-          .hero-photo > div { width: 180px !important; height: 180px !important; }
+          .hero-tagline {
+            justify-content: center !important;
+          }
+          .hero-socials {
+            justify-content: center !important;
+          }
+          .hero-project-cards {
+            flex-direction: column !important;
+          }
+          .hero-project-card {
+            width: 100% !important;
+            text-align: left !important;
+          }
         }
       `}</style>
     </section>
