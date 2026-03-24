@@ -233,38 +233,53 @@ export default function Hero() {
           className="hero-photo"
           style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexShrink: 0 }}
         >
-          <div style={{ position: 'relative', width: '240px', height: '240px' }}>
-            <div style={{
-              position: 'absolute', inset: '-10px', borderRadius: '50%',
-              border: '2px dashed rgba(124,58,237,0.25)',
-            }} />
-            <div style={{
-              position: 'absolute', bottom: '10px', right: '-4px',
-              width: '22px', height: '22px', borderRadius: '50%',
-              backgroundColor: '#7C3AED',
-              border: '3px solid #F8FAFC',
-              zIndex: 2,
-            }} />
+          <div className="hero-photo-wrap">
+            <div className="hero-photo-ring" />
+            <div className="hero-photo-dot" />
             <img
               src={`${import.meta.env.BASE_URL}profile.jpg`}
               alt="Nirmal Narasimha"
               className="hero-photo-img"
-              style={{
-                width: '240px',
-                height: '240px',
-                borderRadius: '50%',
-                objectFit: 'cover',
-                objectPosition: 'center top',
-                border: '4px solid #fff',
-                boxShadow: '0 8px 40px rgba(124,58,237,0.18)',
-                display: 'block',
-              }}
             />
           </div>
         </motion.div>
       </div>
 
       <style>{`
+        .hero-photo-wrap {
+          position: relative;
+          width: 240px;
+          height: 240px;
+          flex-shrink: 0;
+        }
+        .hero-photo-ring {
+          position: absolute;
+          inset: -10px;
+          border-radius: 50%;
+          border: 2px dashed rgba(124,58,237,0.25);
+        }
+        .hero-photo-dot {
+          position: absolute;
+          bottom: 10px;
+          right: -4px;
+          width: 22px;
+          height: 22px;
+          border-radius: 50%;
+          background-color: #7C3AED;
+          border: 3px solid #F8FAFC;
+          z-index: 2;
+        }
+        .hero-photo-img {
+          width: 240px;
+          height: 240px;
+          border-radius: 50%;
+          object-fit: cover;
+          object-position: center top;
+          border: 4px solid #fff;
+          box-shadow: 0 8px 40px rgba(124,58,237,0.18);
+          display: block;
+        }
+
         @media (max-width: 720px) {
           .hero-grid {
             grid-template-columns: 1fr !important;
@@ -275,13 +290,19 @@ export default function Hero() {
             order: -1;
             justify-content: center !important;
           }
-          .hero-photo > div {
-            width: 160px !important;
-            height: 160px !important;
+          .hero-photo-wrap {
+            width: 160px;
+            height: 160px;
           }
           .hero-photo-img {
-            width: 160px !important;
-            height: 160px !important;
+            width: 160px;
+            height: 160px;
+          }
+          .hero-photo-dot {
+            width: 16px;
+            height: 16px;
+            bottom: 6px;
+            right: -2px;
           }
           .hero-tagline {
             justify-content: center !important;
