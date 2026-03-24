@@ -20,12 +20,12 @@ const socialLinks = [
 const featuredProjects = [
   {
     title: 'Cross Lingual Hate Speech Detection',
-    desc: 'Detecting Hate Speech using XLM-R with zero-shot and multi-task learning obtaining Macro F1: 0.79',
+    desc: 'Detection of Hate Speech in low resource languages using XLM-R leveraging zero-shot and multi-task learning, obtaining Macro F1: 0.79',
     href: '#projects',
   },
   {
     title: 'News Debiasing',
-    desc: 'News debiasing system using LLMs like MPT and LED, explored RAG-based grounding, achieving ROUGE-1: 40.5 and BERTScore: 82.6',
+    desc: 'Debiasing news using LLMs like MPT and LED, explored RAG based grounding, achieving ROUGE-1 scores 40.5 and BERTScore: 82.6',
     href: '#projects',
   },
 ]
