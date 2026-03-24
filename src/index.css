@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  background-color: #F8FAFC;
+  color: #0F172A;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, #7C3AED 0%, #4F46E5 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Section label style */
+.section-label {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #7C3AED;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Card shared style */
+.card {
+  background: #fff;
+  border-radius: 16px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(124,58,237,0.11);
+  border-color: #C4B5FD;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: #F1F5F9; }
+::-webkit-scrollbar-thumb { background: #7C3AED; border-radius: 4px; }
+
+/* Selection */
+::selection { background: #DDD6FE; color: #4C1D95; }
